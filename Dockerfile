@@ -15,4 +15,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 ENV PORT 5123
 COPY --from=build /app ./
-CMD dotnet Minimal.API.dll
+CMD dotnet Minimal.API.dll --urls http://*:$PORT
